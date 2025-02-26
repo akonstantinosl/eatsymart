@@ -45,7 +45,7 @@
                             <a href="/admin/products/delete/<?= esc($product['product_id']) ?>" 
                                class="btn btn-danger btn-sm" 
                                onclick="return confirm('Are you sure you want to deactivate this product?')">
-                                <i class="fas fa-trash"></i> Deactivate
+                                <i class="fas fa-trash"></i> Inactivate
                             </a>
                         </td>
                     </tr>
