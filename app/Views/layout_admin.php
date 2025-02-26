@@ -75,29 +75,39 @@
                     <!-- Products Menu -->
                     <li class="nav-item has-treeview <?= (strpos(current_url(), base_url('admin/products')) !== false) ? 'menu-open' : '' ?>">
                         <a href="#" class="nav-link <?= (strpos(current_url(), base_url('admin/products')) !== false) ? 'active' : '' ?>">
-                            <i class="nav-icon fas fa-box"></i>
+                            <i class="nav-icon fas fa-cube"></i>
                             <p>
                                 Products
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
+                            <!-- All Products -->
                             <li class="nav-item">
                                 <a href="/admin/products" class="nav-link <?= (current_url() == base_url('admin/products')) ? 'active' : '' ?>">
-                                    <i class="fas fa-circle nav-icon"></i>
+                                    <i class="fas fa-boxes nav-icon"></i>
                                     <p>All Products</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="/admin/products/create" class="nav-link <?= (current_url() == base_url('admin/products/create')) ? 'active' : '' ?>">
-                                    <i class="fas fa-circle nav-icon"></i>
-                                    <p>Add New Product</p>
-                                </a>
-                            </li>
+                            <!-- Categories -->
                             <li class="nav-item">
                                 <a href="/admin/products/categories" class="nav-link <?= (current_url() == base_url('admin/products/categories')) ? 'active' : '' ?>">
-                                    <i class="fas fa-circle nav-icon"></i>
+                                    <i class="fas fa-tags nav-icon"></i>
                                     <p>Product Categories</p>
+                                </a>
+                            </li>
+                            <!-- Product Purchase -->
+                            <li class="nav-item">
+                                <a href="/admin/products/purchase" class="nav-link <?= (current_url() == base_url('admin/products/purchase')) ? 'active' : '' ?>">
+                                    <i class="fas fa-cart-plus nav-icon"></i>
+                                    <p>Product Purchase</p>
+                                </a>
+                            </li>
+                            <!-- Sales -->
+                            <li class="nav-item">
+                                <a href="/admin/products/sales" class="nav-link <?= (current_url() == base_url('admin/products/sales')) ? 'active' : '' ?>">
+                                    <i class="fas fa-cash-register nav-icon"></i>
+                                    <p>Product Sales</p>
                                 </a>
                             </li>
                         </ul>

@@ -54,11 +54,23 @@ $routes->group('admin', ['filter' => 'admin'], function($routes) {
 
     // Products management
     $routes->get('products', 'ProductController::index');
-    $routes->get('products/create', 'ProductController::create');
-    $routes->post('products/store', 'ProductController::store');
     $routes->get('products/edit/(:segment)', 'ProductController::edit/$1'); 
     $routes->post('products/update/(:segment)', 'ProductController::update/$1'); 
-    $routes->get('products/delete/(:segment)', 'ProductController::delete/$1');
+    // $routes->get('products/delete/(:segment)', 'ProductController::delete/$1');
+    
+    // Product Categories management
+    $routes->get('products/categories', 'CategoryController::index');
+    $routes->get('products/categories/create', 'CategoryController::create');
+    $routes->post('products/categories/store', 'CategoryController::store');
+    $routes->get('products/categories/edit/(:segment)', 'CategoryController::edit/$1');
+    $routes->post('products/categories/update/(:segment)', 'CategoryController::update/$1');
+    $routes->get('products/categories/delete/(:segment)', 'CategoryController::delete/$1');
+
+    // Transactions management
+    $routes->get('products/purchase', 'ProductController::purchase');
+    $routes->post('products/purchase/store', 'ProductController::storePurchase');
+    $routes->get('products/sales', 'ProductController::sales');
+    $routes->post('products/sales/store', 'ProductController::storeSales');
     
     // Customers management
     $routes->get('customers', 'CustomerController::index');
