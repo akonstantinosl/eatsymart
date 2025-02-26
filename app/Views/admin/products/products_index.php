@@ -2,6 +2,14 @@
 
 <?= $this->section('content') ?>
 <div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Product List</h3>
+        <div class="card-tools">
+            <a href="/admin/products/create" class="btn btn-primary btn-sm">
+                <i class="fas fa-plus"></i> Add New Product
+            </a>
+        </div>
+    </div>
     <div class="card-body table-responsive p-0">
         <table class="table table-bordered table-striped">
             <thead>
@@ -33,6 +41,11 @@
                         <td>
                             <a href="/admin/products/edit/<?= esc($product['product_id']) ?>" class="btn btn-warning btn-sm">
                                 <i class="fas fa-edit"></i> Edit
+                            </a>
+                            <a href="/admin/products/delete/<?= esc($product['product_id']) ?>" 
+                               class="btn btn-danger btn-sm" 
+                               onclick="return confirm('Are you sure you want to deactivate this product?')">
+                                <i class="fas fa-trash"></i> Deactivate
                             </a>
                         </td>
                     </tr>

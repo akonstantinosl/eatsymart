@@ -54,9 +54,11 @@ $routes->group('admin', ['filter' => 'admin'], function($routes) {
 
     // Products management
     $routes->get('products', 'ProductController::index');
+    $routes->get('products/create', 'ProductController::create');
+    $routes->post('products/store', 'ProductController::store');
     $routes->get('products/edit/(:segment)', 'ProductController::edit/$1'); 
     $routes->post('products/update/(:segment)', 'ProductController::update/$1'); 
-    // $routes->get('products/delete/(:segment)', 'ProductController::delete/$1');
+    $routes->get('products/delete/(:segment)', 'ProductController::delete/$1');
     
     // Product Categories management
     $routes->get('products/categories', 'CategoryController::index');
