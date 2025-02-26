@@ -64,7 +64,10 @@
             </div>
 
             <div class="mt-4">
-                <!-- Remove role and status fields -->
+                <!-- Hidden fields for role and status -->
+                <input type="hidden" name="role" value="<?= $user['user_role'] ?>">  <!-- Role field is hidden -->
+                <input type="hidden" name="status" value="<?= $user['user_status'] ?>">  <!-- Status field is hidden -->
+
                 <button type="submit" class="btn btn-primary">Update</button>
                 <a href="/admin/users" class="btn btn-default">Cancel</a>
             </div>

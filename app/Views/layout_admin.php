@@ -55,23 +55,88 @@
                     </div>
                 </div>
 
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <li class="nav-item">
-                            <a href="/admin/dashboard" class="nav-link <?= (current_url() == base_url('admin/dashboard')) ? 'active' : '' ?>">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>Dashboard</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/admin/users" class="nav-link <?= (strpos(current_url(), base_url('admin/users')) !== false) ? 'active' : '' ?>">
-                                <i class="nav-icon fas fa-users"></i>
-                                <p>Users</p>
-                            </a>
-                        </li>
-                        <!-- More menu items can be added here -->
-                    </ul>
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <li class="nav-item">
+                        <a href="/admin/dashboard" class="nav-link <?= (current_url() == base_url('admin/dashboard')) ? 'active' : '' ?>">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/admin/users" class="nav-link <?= (strpos(current_url(), base_url('admin/users')) !== false) ? 'active' : '' ?>">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>Users</p>
+                        </a>
+                    </li>
+
+                    <!-- Products Menu -->
+                    <li class="nav-item has-treeview <?= (strpos(current_url(), base_url('admin/products')) !== false) ? 'menu-open' : '' ?>">
+                        <a href="#" class="nav-link <?= (strpos(current_url(), base_url('admin/products')) !== false) ? 'active' : '' ?>">
+                            <i class="nav-icon fas fa-box"></i>
+                            <p>
+                                Products
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/admin/products" class="nav-link <?= (current_url() == base_url('admin/products')) ? 'active' : '' ?>">
+                                    <i class="fas fa-circle nav-icon"></i>
+                                    <p>All Products</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/admin/products/create" class="nav-link <?= (current_url() == base_url('admin/products/create')) ? 'active' : '' ?>">
+                                    <i class="fas fa-circle nav-icon"></i>
+                                    <p>Add New Product</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/admin/products/categories" class="nav-link <?= (current_url() == base_url('admin/products/categories')) ? 'active' : '' ?>">
+                                    <i class="fas fa-circle nav-icon"></i>
+                                    <p>Product Categories</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Customers Menu -->
+                    <li class="nav-item has-treeview <?= (strpos(current_url(), base_url('admin/customers')) !== false) ? 'menu-open' : '' ?>">
+                        <a href="#" class="nav-link <?= (strpos(current_url(), base_url('admin/customers')) !== false) ? 'active' : '' ?>">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>
+                                Customers
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/admin/customers" class="nav-link <?= (current_url() == base_url('admin/customers')) ? 'active' : '' ?>">
+                                    <i class="fas fa-circle nav-icon"></i>
+                                    <p>All Customers</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/admin/customers/create" class="nav-link <?= (current_url() == base_url('admin/customers/create')) ? 'active' : '' ?>">
+                                    <i class="fas fa-circle nav-icon"></i>
+                                    <p>Add New Customer</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/admin/suppliers" class="nav-link <?= (strpos(current_url(), base_url('admin/suppliers')) !== false) ? 'active' : '' ?>">
+                            <i class="nav-icon fas fa-truck"></i>
+                            <p>Suppliers</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>

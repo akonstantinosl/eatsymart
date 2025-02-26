@@ -3,7 +3,7 @@
 <?= $this->section('content') ?>
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">User List</h3>
+        <h3 class="card-title">List of Users</h3>
         <div class="card-tools">
             <a href="/admin/users/create" class="btn btn-primary btn-sm">
                 <i class="fas fa-plus"></i> Add New User
@@ -12,10 +12,10 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body table-responsive p-0">
-        <table id="usersTable" class="table table-hover text-nowrap">
+        <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>#</th>
                     <th>Username</th>
                     <th>Full Name</th>
                     <th>Phone</th>
@@ -24,10 +24,11 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($users as $user): ?>
+                <?php foreach ($users as $index => $user): ?>
                     <?php if ($user['user_status'] == 'active'): ?>
                     <tr>
-                        <td><?= $user['user_id'] ?></td>
+                        <!-- Correct row numbering -->
+                        <td><?= $index + 1 ?></td>
                         <td><?= $user['user_name'] ?></td>
                         <td><?= $user['user_fullname'] ?></td>
                         <td><?= $user['user_phone'] ?></td>
@@ -39,11 +40,11 @@
                             <?php endif; ?>
                         </td>
                         <td>
-                            <a href="/admin/users/edit/<?= $user['user_id'] ?>" class="btn btn-sm btn-info">
+                            <a href="/admin/users/edit/<?= $user['user_id'] ?>" class="btn btn-warning btn-sm">
                                 <i class="fas fa-edit"></i> Edit
                             </a>
                             <?php if ($user['user_id'] != session()->get('user_id')): ?>
-                            <a href="/admin/users/delete/<?= $user['user_id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to inactive this user?');">
+                            <a href="/admin/users/delete/<?= $user['user_id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to set this user as inactive?');">
                                 <i class="fas fa-trash"></i> Inactive
                             </a>
                             <?php endif; ?>
@@ -62,21 +63,4 @@
     <!-- /.card-body -->
 </div>
 <!-- /.card -->
-
-<script>
-$(document).ready(function() {
-    $('#usersTable').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": true,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
-        "columnDefs": [
-            { "targets": [0], "orderable": false }  // Disable sorting for the first column (user_id)
-        ]
-    });
-});
-</script>
 <?= $this->endSection() ?>

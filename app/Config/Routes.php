@@ -51,6 +51,30 @@ $routes->group('admin', ['filter' => 'admin'], function($routes) {
     $routes->get('users/edit/(:segment)', 'UserController::edit/$1'); 
     $routes->post('users/update/(:segment)', 'UserController::update/$1'); 
     $routes->get('users/delete/(:segment)', 'UserController::delete/$1'); 
+
+    // Products management
+    $routes->get('products', 'ProductController::index');
+    $routes->get('products/create', 'ProductController::create');
+    $routes->post('products/store', 'ProductController::store');
+    $routes->get('products/edit/(:segment)', 'ProductController::edit/$1'); 
+    $routes->post('products/update/(:segment)', 'ProductController::update/$1'); 
+    $routes->get('products/delete/(:segment)', 'ProductController::delete/$1');
+    
+    // Customers management
+    $routes->get('customers', 'CustomerController::index');
+    $routes->get('customers/create', 'CustomerController::create');
+    $routes->post('customers/store', 'CustomerController::store');
+    $routes->get('customers/edit/(:segment)', 'CustomerController::edit/$1');
+    $routes->post('customers/update/(:segment)', 'CustomerController::update/$1');
+    $routes->get('customers/delete/(:segment)', 'CustomerController::delete/$1');
+
+    // Supplier management routes
+    $routes->get('suppliers', 'SupplierController::index');
+    $routes->get('suppliers/create', 'SupplierController::create');
+    $routes->post('suppliers/store', 'SupplierController::store');
+    $routes->get('suppliers/edit/(:segment)', 'SupplierController::edit/$1');
+    $routes->post('suppliers/update/(:segment)', 'SupplierController::update/$1');
+    $routes->get('suppliers/delete/(:segment)', 'SupplierController::delete/$1');
 });
 
 // Staff routes group
